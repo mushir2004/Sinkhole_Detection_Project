@@ -1,0 +1,23 @@
+# Virtual Environments
+venv/
+env/
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+
+# 🚨 CRITICAL: Ignore all heavy dataset files 🚨
+Data/
+*.csv
+*.mp4
+*.avi
+*.mkv
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS generated files
+.DS_Store
+Thumbs.db
