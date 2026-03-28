@@ -28,7 +28,7 @@ try:
     cap = cv2.VideoCapture(video_path)
     
     if not cap.isOpened():
-        print(f"❌ ERROR: Could not open {video_filename}. Make sure it is in the PVS 1 folder!")
+        print(f" ERROR: Could not open {video_filename}. Make sure it is in the PVS 1 folder!")
         exit()
         
     fps = cap.get(cv2.CAP_PROP_FPS)
@@ -55,21 +55,26 @@ try:
         cap.set(cv2.CAP_PROP_POS_FRAMES, target_frame)
         
         # Read the frame
+        # Read the frame
         success, frame = cap.read()
         
         if success:
-            # Save the image
+            #  NEW CODE: Crop the frame to keep only the left 55% (the road) 
+            height, width, _ = frame.shape
+            cropped_frame = frame[:, :int(width * 0.50)] 
+            
+            # Save the CROPPED image
             image_name = f"dashcam_sinkhole_proxy_{target_frame}.jpg"
             save_path = os.path.join(output_folder, image_name)
-            cv2.imwrite(save_path, frame)
+            cv2.imwrite(save_path, cropped_frame) # Make sure this says cropped_frame!
             count += 1
             
     cap.release()
     print("-" * 40)
-    print(f"✅ SUCCESS! Extracted {count} images to: {output_folder}")
+    print(f" SUCCESS! Extracted {count} images to: {output_folder}")
     print("-" * 40)
 
 except FileNotFoundError:
-    print("❌ ERROR: Could not find one of the CSV files. Did you move them?")
+    print(" ERROR: Could not find one of the CSV files. Did you move them?")
 except Exception as e:
-    print(f"❌ An error occurred: {e}")
+    print(f" An error occurred: {e}")

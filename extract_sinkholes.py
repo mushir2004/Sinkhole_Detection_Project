@@ -38,7 +38,7 @@ try:
     sinkhole_proxies = df_anomalies[df_anomalies[target_sensor] < severe_drop_threshold]
 
     print("-" * 40)
-    print(f"🚨 SINKHOLE PROXIES FOUND: {len(sinkhole_proxies)} rows 🚨")
+    print(f" SINKHOLE PROXIES FOUND: {len(sinkhole_proxies)} rows ")
     print("-" * 40)
 
     # 6. Save the results
@@ -47,13 +47,13 @@ try:
 
     output_path = os.path.join(output_folder, "sinkhole_events_session1.csv")
     sinkhole_proxies.to_csv(output_path, index=False)
-    print(f"\n✅ Saved severe drop events to: {output_path}")
+    print(f"\n Saved severe drop events to: {output_path}")
 
     if len(sinkhole_proxies) > 0:
         print("\nSample Timestamps of Severe Drops (For Video Extraction later):")
         print(sinkhole_proxies[['timestamp', target_sensor, 'speed']].head())
 
 except FileNotFoundError:
-    print("❌ ERROR: Could not find one of the CSV files. Check your Data folder paths!")
+    print(" ERROR: Could not find one of the CSV files. Check your Data folder paths!")
 except Exception as e:
-    print(f"❌ An error occurred: {e}")
+    print(f" An error occurred: {e}")

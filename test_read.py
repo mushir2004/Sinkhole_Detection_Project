@@ -10,7 +10,7 @@ try:
     # Load the CSV file
     df = pd.read_csv(file_path)
     
-    print("✅ SUCCESS! The file was loaded.\n")
+    print(" SUCCESS! The file was loaded.\n")
     print("-" * 40)
     print("FIRST 5 ROWS:")
     print("-" * 40)
@@ -25,7 +25,7 @@ try:
         print(f"- {col}")
         
 except FileNotFoundError:
-    print("❌ ERROR: Could not find the file.")
+    print(" ERROR: Could not find the file.")
     print("Please check that your folder names exactly match the file_path variable.")
 except Exception as e:
-    print(f"❌ An unexpected error occurred: {e}")
+    print(f" An unexpected error occurred: {e}")

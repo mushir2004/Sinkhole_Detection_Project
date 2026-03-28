@@ -1,0 +1,13 @@
+names:
+- Concentric_Crack
+- Pothole
+nc: 2
+roboflow:
+  license: CC BY 4.0
+  project: sinkhole_vision_fusion
+  url: https://universe.roboflow.com/xxx-r4bdj/sinkhole_vision_fusion/dataset/1
+  version: 1
+  workspace: xxx-r4bdj
+test: ../test/images
+train: ../train/images
+val: ../valid/images
