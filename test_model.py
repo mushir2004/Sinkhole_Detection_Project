@@ -12,6 +12,6 @@ print(" Feeding it the test image...")
 
 # Run the AI on your new image!
 # save=True tells YOLO to save a copy of the image with the boxes drawn on it
-results = model.predict(source="test_image_4.jpg", save=True, conf=0.5)
+results = model.predict(source="test_image_6.jpg", save=True, conf=0.5)
 
 print("\n DONE! Go check the 'runs/detect/predict' folder to see the AI's drawing!")
