@@ -13,7 +13,7 @@ print(" Feeding it the test image...")
 # Run the AI on your new image!
 # save=True tells YOLO to save a copy of the image with the boxes drawn on it
 results = model.predict(
-    source="test_image_3.jpg", 
+    source="test_image_1.jpg", 
     save=True, 
     conf=0.5,
     project=r"E:\Vehicle-Damage-Detection\runs\detect",  # <-- THIS IS THE MAGIC LINE!

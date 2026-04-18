@@ -69,7 +69,7 @@ try:
 
         # Flash the massive red warning if fusion conditions are met!
         if warning_triggered:
-            cv2.putText(annotated_frame, " CRITICAL: SINKHOLE IMMINENT 🚨", (20, 100),
+            cv2.putText(annotated_frame, "CRITICAL: SINKHOLE IMMINENT", (20, 100),
                         cv2.FONT_HERSHEY_DUPLEX, 1.0, (0, 0, 255), 3)
 
         # Display the final fused video on your screen
